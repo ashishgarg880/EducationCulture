@@ -35,7 +35,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public String addEmployee(Employee employee) {
 		List<Employee> list = new ArrayList(); 
 		list = this.employeeRepository.findAll();
-		list = list.stream().filter(n -> n.getEmpMobNo() == employee.getEmpMobNo()).collect(Collectors.toList());
+		list = list.stream().filter(n -> n.getEmpMobNo().equals(employee.getEmpMobNo())).collect(Collectors.toList());
 		if(list.size() > 0) {
 			return "Data is Exist";
 		}
@@ -46,7 +46,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public String putEmployee(Employee employee) {
 		List<Employee> list = new ArrayList(); 
 		list = this.employeeRepository.findAll();
-		list = list.stream().filter(n -> n.getEmpMobNo() == mobileNo && n.getEmpPass() == employee.getEmpPass()).collect(Collectors.toList());
+		list = list.stream().filter(n -> n.getEmpMobNo().equals(mobileNo) && n.getEmpPass().equals(employee.getEmpPass())).collect(Collectors.toList());
 		if(list.size() > 0) {
 			employeeRepository.save(employee);
 			return "You password has been reset successfully";
