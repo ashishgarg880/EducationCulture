@@ -1,0 +1,14 @@
+{
+    "empNo": 3,
+    "empName": "Ashish Gupta",
+    "Address": {
+	    "address" : "#109 New Maket",
+	    "empMobNo": 7973281897,
+	    "deptName": "Sales",
+	    "empCity": "Rampura Phul",
+	    "empState": "Punjab",
+	    "empPinCode": "151103",
+	    "empDob": "21-07-1999",
+	    "empEmail": "ashishgarg880@gmail.com"
+    }
+}
