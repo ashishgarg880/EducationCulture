@@ -8,7 +8,7 @@ import com.infotrixs.employee.manage.system.entities.Employee;
 
 @Component
 public interface EmployeeService {
-	public boolean getEmployee(long number, String password);
+	public boolean getEmployee(String number, String password);
 	
 	public String addEmployee(Employee employee);
 	

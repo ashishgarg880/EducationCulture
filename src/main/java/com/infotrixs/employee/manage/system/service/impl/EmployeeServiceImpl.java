@@ -18,14 +18,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Autowired
 	public EmployeeRepository employeeRepository;
 	private Employee employee;
-	private long mobileNo;
+	private String mobileNo;
 	
-	public boolean getEmployee(long number, String password) {
+	public boolean getEmployee(String number, String password) {
 		List<Employee> list = new ArrayList(); 
 		list = this.employeeRepository.findAll();
-		list = list.stream().filter(n -> n.getEmpMobNo() == number && n.getEmpPass() == password).collect(Collectors.toList());
-		mobileNo = list.get(0).getEmpMobNo(); 
+		list = list.stream().filter(n ->  n.getEmpMobNo() == number && n.getEmpPass() == password).collect(Collectors.toList());
 		if(list.size() > 0) {
+			mobileNo = list.get(0).getEmpMobNo(); 
 			System.out.println("Welcome" +list.get(0).getEmpName());
 			return true;
 		 }

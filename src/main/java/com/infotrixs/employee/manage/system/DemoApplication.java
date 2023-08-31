@@ -52,7 +52,7 @@ public class DemoApplication implements CommandLineRunner {
 			Date javaDate = sdfrmt.parse(date);
 			return false;
 		} catch (Exception e) {
-			return false;
+			return false;	
 		}
 	}
 	
@@ -100,8 +100,7 @@ public class DemoApplication implements CommandLineRunner {
 									System.out.println("Please enter correct date");
 									System.out.println("Please start again");
 								} 
-								long long1 = Long.parseLong(number);
-								Employee employee = new Employee(str,long1,password,date);
+								Employee employee = new Employee(str,number,password,date);
 								System.out.println(this.employeeService.addEmployee(employee));
 							}
 						}
@@ -120,8 +119,7 @@ public class DemoApplication implements CommandLineRunner {
 					}
 					System.out.println("Please enter your password:");
 					String pass = sc.next();
-					long long1 = Long.parseLong(number);
-				 	if(this.employeeService.getEmployee(long1,pass)) {
+				 	if(this.employeeService.getEmployee(number,pass)) {
 				 		System.out.println("Please enter 1 for Resetting Password \n\n Please enter 2 for Signout");
 				 		t = sc.nextInt();
 				 		switch(t) {
@@ -134,8 +132,7 @@ public class DemoApplication implements CommandLineRunner {
 									System.out.println("Please check the valid password");
 								} else {
 									String date = "";
-									long1 = Long.parseLong(password);
-									Employee employee = new Employee("",long1,password,date);
+									Employee employee = new Employee("",number,password,date);
 									System.out.println(this.employeeService.putEmployee(employee));
 								}
 				 				break;

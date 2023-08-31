@@ -14,7 +14,7 @@ public class Employee {
 	@Column(name = "emp_name")
 	private String empName;
 	@Column(name = "emp_mob")
-	private long empMobNo;
+	private String empMobNo;
 	@Column(name = "emp_pass")
 	private String empPass;
 	@Column(name = "emp_date")
@@ -25,7 +25,7 @@ public class Employee {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Employee(String empName, long empMobNo, String empPass, String empDate) {
+	public Employee(String empName, String empMobNo, String empPass, String empDate) {
 		super();
 		this.empName = empName;
 		this.empMobNo = empMobNo;
@@ -42,10 +42,10 @@ public class Employee {
 	public void setEmpName(String empName) {
 		this.empName = empName;
 	}
-	public long getEmpMobNo() {
+	public String getEmpMobNo() {
 		return empMobNo;
 	}
-	public void setEmpMobNo(long empMobNo) {
+	public void setEmpMobNo(String empMobNo) {
 		this.empMobNo = empMobNo;
 	}
 	public String getEmpPass() {
