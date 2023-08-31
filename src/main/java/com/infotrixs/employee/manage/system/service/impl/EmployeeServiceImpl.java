@@ -23,10 +23,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public boolean getEmployee(String number, String password) {
 		List<Employee> list = new ArrayList(); 
 		list = this.employeeRepository.findAll();
-		list = list.stream().filter(n ->  n.getEmpMobNo() == number && n.getEmpPass() == password).collect(Collectors.toList());
+		list = list.stream().filter(n ->  n.getEmpMobNo().equals(number) && n.getEmpPass().equals(password)).collect(Collectors.toList());
 		if(list.size() > 0) {
 			mobileNo = list.get(0).getEmpMobNo(); 
-			System.out.println("Welcome" +list.get(0).getEmpName());
+			System.out.println("Welcome " +list.get(0).getEmpName());
 			return true;
 		 }
 		 return false;
@@ -36,7 +36,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 		List<Employee> list = new ArrayList(); 
 		list = this.employeeRepository.findAll();
 		list = list.stream().filter(n -> n.getEmpMobNo() == employee.getEmpMobNo()).collect(Collectors.toList());
-		System.out.println(list);
 		if(list.size() > 0) {
 			return "Data is Exist";
 		}
